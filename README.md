@@ -6,7 +6,7 @@ Personal portfolio site for **maleekskies**, a product manager and content write
 
 ## About
 
-This is a single-file, static HTML portfolio, no build step, no framework, no dependencies. Everything (markup, styles, and scripts) lives in `index.html`.
+This is a static HTML portfolio, no build step, no framework, no dependencies. All markup, styles, and scripts live in `index.html`.
 
 The site covers:
 
@@ -18,13 +18,13 @@ The site covers:
   - **Live Sites**: shipped projects with live previews, tech stack, and repo links
   - **Research & Docs**: sourced research documents
   - **Ambassador Work**: content collaborations with VIZO Exchange, Ozak AI, and MegPrimePay
-- **Contact**: direct links to email, X, Instagram, LinkedIn, and Discord
+- **Contact**: email, X, Telegram, LinkedIn, and Discord
 
 ## Features
 
-- Single self-contained HTML file, easy to deploy anywhere
 - Light/dark theme toggle (preference saved locally)
 - In-page navigation between sections without full page reloads
+- CV download link, in the header on desktop and in the mobile menu on smaller screens
 - Fully responsive, including a dedicated mobile menu
 - Scroll-triggered animations, respecting the "reduce motion" accessibility setting for larger entrance effects
 
@@ -34,15 +34,21 @@ The site covers:
 - Google Fonts (Space Grotesk, IBM Plex Mono, Inter)
 - No build tools, no package manager required
 
+## Files
+
+- `index.html`: the site itself
+- `cv.pdf`: linked from the CV button in the nav
+- `README.md`: this file
+
 ## Deployment
 
-Since this is a single static HTML file, it can be deployed anywhere that serves static files:
+This is a static site, so it can be deployed anywhere that serves static files. Upload `index.html` and `cv.pdf` together, in the same folder, since the CV button links to `cv.pdf` by a relative path and will break if it's missing.
 
-- **Netlify Drop**: drag and drop `index.html` at [app.netlify.com/drop](https://app.netlify.com/drop)
-- **Vercel**: create a project and upload `index.html`
-- **GitHub Pages**: push `index.html` to this repo, then enable Pages in Settings > Pages, pointing to the main branch
+- **Netlify Drop**: drag and drop the folder at [app.netlify.com/drop](https://app.netlify.com/drop)
+- **Vercel**: create a project and upload the folder
+- **GitHub Pages**: push the files to this repo, then enable Pages in Settings > Pages, pointing to the main branch
 
-No build command or install step is needed. The file just needs to be named `index.html` so it's served as the homepage.
+No build command or install step is needed. `index.html` just needs to stay named that so it's served as the homepage.
 
 ## Local Preview
 
@@ -52,5 +58,6 @@ Open `index.html` directly in any browser. No server required.
 
 - Email: maleekskies@gmail.com
 - X: [@maleekskies](https://x.com/maleekskies)
-- Instagram: [@maleekskies](https://instagram.com/maleekskies)
+- Telegram: [@maleekskies](https://t.me/maleekskies)
 - LinkedIn: [maleekskies](https://www.linkedin.com/in/maleekskies/)
+- Discord: @maleekskies (copy the handle from the site, Discord doesn't support a direct profile link by username alone)

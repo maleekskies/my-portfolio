@@ -68,6 +68,9 @@
   .nav-cta{border:1px solid var(--copper);color:var(--copper-bright);padding:9px 20px;border-radius:20px;font-size:0.8rem;transition:all .25s;}
   .nav-cta:hover{background:var(--copper);color:#0b1120;}
 
+  .nav-cv{border:1px solid var(--line);color:var(--text-dim);padding:9px 18px;border-radius:20px;font-size:0.8rem;transition:all .25s;}
+  .nav-cv:hover{border-color:var(--cyan);color:var(--cyan-bright);}
+
   .mobile-menu-toggle{
     display:none;width:38px;height:38px;border-radius:8px;
     border:1px solid var(--line);background:var(--bg-alt);
@@ -328,6 +331,7 @@
     .logo span{display:none;}
     .logo{white-space:nowrap;}
     .nav-cta{display:none;}
+    .nav-cv{display:none;}
     .mobile-menu-toggle{display:flex;}
     .hero{grid-template-columns:1fr;padding:130px 0 44px;}
     .portrait-wrap{order:-1;margin-bottom:26px;}
@@ -433,6 +437,7 @@
       <a href="#writing">Writing</a>
     </div>
     <div class="nav-actions">
+      <a href="cv.pdf" class="nav-cv" target="_blank" rel="noopener">CV</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke-linecap="round"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" stroke-linejoin="round"/></svg>
@@ -448,6 +453,7 @@
     <a href="#about">About</a>
     <a href="#skills">What I Do</a>
     <a href="#writing">Writing</a>
+    <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
@@ -634,8 +640,8 @@
         <span class="social-badge xicon"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
         <span>@maleekskies</span><span class="arrow">↗</span>
       </a>
-      <a class="row" href="https://instagram.com/maleekskies" target="_blank" rel="noopener">
-        <span class="social-badge"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.5" stroke="url(#igGrad)" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" stroke="url(#igGrad)" stroke-width="1.7"/><circle cx="17.3" cy="6.7" r="1.15" fill="url(#igGrad)"/><defs><linearGradient id="igGrad" x1="0" y1="24" x2="24" y2="0"><stop offset="0" stop-color="#fdc468"/><stop offset="0.4" stop-color="#e1306c"/><stop offset="0.75" stop-color="#c13584"/><stop offset="1" stop-color="#5851db"/></linearGradient></defs></svg></span>
+      <a class="row" href="https://t.me/maleekskies" target="_blank" rel="noopener">
+        <span class="social-badge"><svg viewBox="0 0 24 24" fill="#29A9EB"><circle cx="12" cy="12" r="10"/><path d="M6.7 12.2 16.4 8c.5-.2.9.1.7.7l-1.8 8.5c-.1.6-.5.7-1 .5l-2.6-1.9-1.3 1.2c-.1.1-.3.2-.5.2l.2-2.6 4.8-4.3c.2-.2 0-.3-.2-.1l-5.9 3.7-2.5-.8c-.6-.2-.6-.6.1-.9Z" fill="#fff"/></svg></span>
         <span>@maleekskies</span><span class="arrow">↗</span>
       </a>
       <a class="row" href="https://www.linkedin.com/in/maleekskies/" target="_blank" rel="noopener">
@@ -850,6 +856,50 @@
         <div class="site-actions">
           <a class="site-btn site-btn-preview" href="https://urpassport.vercel.app/" target="_blank" rel="noopener">Preview &#8599;</a>
           <a class="site-btn site-btn-repo" href="https://github.com/maleekskies/urpassport" target="_blank" rel="noopener">Repository</a>
+        </div>
+      </div>
+      <div class="site-card">
+        <div class="site-card-head">
+          <div>
+            <h3>Huntboard</h3>
+            <div class="s-tag">AI-Powered Job Search Platform</div>
+          </div>
+          <span class="site-status">Completed</span>
+        </div>
+        <p class="s-desc">A full-stack job search platform that scans multiple job boards (RemoteOK, Remotive, Himalayas, Arbeitnow, Jobicy, Adzuna) and scores roles against a user's CV and preferences using a hybrid keyword-and-LLM scoring engine. A 4-stage pipeline (Saved, Ready to send, Applied, Interview) is paired with an AI-generated "kit" system that produces tailored CVs, cover letters, and talking points per role.</p>
+        <div class="s-meta"><strong>Built for:</strong> Job seekers who want their applications matched and tailored to each role instead of sent out generically.</div>
+        <div class="tech-stack">
+          <span class="tech-badge">Next.js</span>
+          <span class="tech-badge">Supabase</span>
+          <span class="tech-badge">Groq</span>
+          <span class="tech-badge">Resend</span>
+          <span class="tech-badge">Vercel</span>
+        </div>
+        <div class="site-actions">
+          <a class="site-btn site-btn-preview" href="https://huntboard-nu.vercel.app" target="_blank" rel="noopener">Preview &#8599;</a>
+          <a class="site-btn site-btn-repo" href="https://github.com/maleekskies/huntboard" target="_blank" rel="noopener">Repository</a>
+        </div>
+      </div>
+      <div class="site-card">
+        <div class="site-card-head">
+          <div>
+            <h3>Auditlynx</h3>
+            <div class="s-tag">Security Analysis Platform</div>
+          </div>
+          <span class="site-status">Completed</span>
+        </div>
+        <p class="s-desc">A defensive security toolkit with five modules: a Security Headers &amp; Config Checker that grades sites A through F, a Phishing Analyzer for email triage, a DNS &amp; Domain Recon tool, a Code Security Scanner, and a Breach Checker. Built as stateless heuristic triage for human analysts, it surfaces signals rather than verdicts.</p>
+        <div class="s-meta"><strong>Built for:</strong> Security analysts and developers who need a quick, no-storage triage tool before deeper manual review.</div>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Vite</span>
+          <span class="tech-badge">Tailwind CSS</span>
+        </div>
+        <div class="site-actions">
+          <a class="site-btn site-btn-preview" href="https://auditlynx.vercel.app/" target="_blank" rel="noopener">Preview &#8599;</a>
+          <a class="site-btn site-btn-repo" href="https://github.com/maleekskies/Auditlynx" target="_blank" rel="noopener">Repository</a>
         </div>
       </div>
     </div>
