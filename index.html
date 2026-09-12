@@ -58,15 +58,15 @@
   *{transition: background-color .3s ease, color .3s ease, border-color .3s ease;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;position:relative;z-index:0;}
 
   /* DYNAMIC BACKGROUND: particle network (light mode) / terminal (dark mode) */
-  #bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .5s ease;}
+  #bgCanvas{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .5s ease;}
   #bgTerminal{
-    position:fixed;bottom:24px;right:24px;z-index:0;pointer-events:none;
+    position:fixed;bottom:24px;right:24px;z-index:5;pointer-events:none;
     width:340px;max-width:calc(100vw - 48px);
-    background:rgba(20,17,14,0.72);border:1px solid var(--line);border-radius:10px;
-    padding:16px 18px;opacity:0;transition:opacity .5s ease;
+    background:rgba(20,17,14,0.85);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;opacity:1;transition:opacity .5s ease;
     backdrop-filter:blur(2px);
   }
   #bgTerminalText{
@@ -75,7 +75,6 @@
   }
   [data-theme="light"] #bgCanvas{opacity:0.5;}
   [data-theme="light"] #bgTerminal{display:none;}
-  html:not([data-theme="light"]) #bgTerminal{opacity:1;}
   @media (max-width:640px){
     #bgTerminal{display:none;}
   }
