@@ -1,6 +1,6 @@
 # maleekskies: Portfolio
 
-Personal portfolio site for **maleekskies**, a product manager and content writer working at the intersection of Web3, AI, and practical problem solving.
+Personal portfolio site for **maleekskies**, a full stack developer, product manager, and content writer working across Web3, AI, and practical software.
 
 **Live site:** [maleekskies.vercel.app](https://maleekskies.vercel.app)
 
@@ -11,38 +11,47 @@ This is a static HTML portfolio, no build step, no framework, no dependencies. A
 The site covers:
 
 - **About**: background, current focus, and core stats
-- **What I Do**: 6 core skill areas, from web development to content writing
-- **My Work**: a hub with five in-page views:
+- **What I Do**: 6 core skill areas, from full stack development to content writing
+- **Projects that I have built**: 5 featured projects with screenshots, descriptions, tech stacks, live links, and repo links
+- **My Work**: a hub with four in-page views:
   - **Content Writing**: published threads and articles
   - **AI Video Content**: produced video work
-  - **Live Sites**: shipped projects with live previews, tech stack, and repo links
   - **Research & Docs**: sourced research documents
   - **Ambassador Work**: content collaborations with VIZO Exchange, Ozak AI, and MegPrimePay
+- **Tools I Use**: tech stack organized by category (frontend, backend, AI, tools & design), each with its logo
+- **What Drives Me**: 4 short values behind the work
 - **Contact**: email, X, Telegram, LinkedIn, and Discord
 
 ## Features
 
 - Light/dark theme toggle (preference saved locally)
+- Dynamic background: a live-typing terminal in dark mode, an animated particle network in light mode
+- 3D tilt effect on project and tool cards, following the mouse
 - In-page navigation between sections without full page reloads
 - CV download link, in the header on desktop and in the mobile menu on smaller screens
+- Custom favicon and social link preview image
 - Fully responsive, including a dedicated mobile menu
 - Scroll-triggered animations, respecting the "reduce motion" accessibility setting for larger entrance effects
 
 ## Tech Stack
 
 - HTML5, CSS3, vanilla JavaScript
+- Canvas API for the particle network background
 - Google Fonts (Space Grotesk, IBM Plex Mono, Inter)
+- Tool icons loaded from devicon and Simple Icons via CDN, with graceful fallback if any icon fails to load
 - No build tools, no package manager required
 
 ## Files
 
 - `index.html`: the site itself
 - `cv.pdf`: linked from the CV button in the nav
+- `favicon.ico`, `favicon-32.png`, `favicon-192.png`: browser tab icon, multiple sizes
+- `preview.jpg`: the image shown when the site link is shared on social platforms or messaging apps
 - `README.md`: this file
 
 ## Deployment
 
-This is a static site, so it can be deployed anywhere that serves static files. Upload `index.html` and `cv.pdf` together, in the same folder, since the CV button links to `cv.pdf` by a relative path and will break if it's missing.
+This is a static site, so it can be deployed anywhere that serves static files. Upload all the files above together, in the same folder, since `index.html` links to several of them by relative path and they'll break if separated.
 
 - **Netlify Drop**: drag and drop the folder at [app.netlify.com/drop](https://app.netlify.com/drop)
 - **Vercel**: create a project and upload the folder
