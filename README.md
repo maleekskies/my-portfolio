@@ -11,8 +11,8 @@ This is a static HTML portfolio, no build step, no framework, no dependencies. A
 The site covers:
 
 - **About**: background, current focus, and core stats
-- **What I Do**: 6 core skill areas, from full stack development to content writing
-- **Projects that I have built**: 5 featured projects with screenshots, descriptions, tech stacks, live links, and repo links
+- **What I Do**: 5 core skill areas (full stack development, software testing, AI evaluation, content writing, visual storytelling), shown as a tabbed single-view, one skill at a time
+- **Projects that I have built**: 8 featured projects, tabbed single-view with screenshots, descriptions, tech stacks, live links, and repo links
 - **My Work**: a hub with four in-page views:
   - **Content Writing**: published threads and articles
   - **AI Video Content**: produced video work
