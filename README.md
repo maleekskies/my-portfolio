@@ -25,8 +25,10 @@ The site covers:
 ## Features
 
 - Light/dark theme toggle (preference saved locally)
-- Dynamic background: a live-typing terminal in dark mode, an animated particle network in light mode
+- Dynamic background: a multi-column scrolling code effect in dark mode (brass/forest palette, glow, depth layering), an interactive particle network in light mode that particles gently drift toward the cursor
 - 3D tilt effect on project and tool cards, following the mouse
+- Project image carousels (arrows and thumbnail strip), ready for multiple screenshots per project
+- Mobile header auto-hides on scroll down, reappears on scroll up
 - In-page navigation between sections without full page reloads
 - CV download link, in the header on desktop and in the mobile menu on smaller screens
 - Custom favicon and social link preview image
