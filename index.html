@@ -80,7 +80,7 @@
   .eyebrow::before{content:'';width:22px;height:1px;background:var(--cyan);}
 
   /* NAV */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(var(--bg-rgb),0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s ease;}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(var(--bg-rgb),0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .3s ease;will-change:transform;}
   header.header-hidden{transform:translateY(-100%);}
   nav.wrap{display:flex;align-items:center;justify-content:space-between;height:74px;}
   .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;color:var(--copper-bright);}
@@ -230,6 +230,7 @@
   .skill-pager{
     font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--text-dimmer);
     margin-bottom:20px;letter-spacing:0.04em;
+    display:flex;align-items:center;gap:12px;
   }
   .skill-pager #skillPagerCurrent{color:var(--copper-bright);font-weight:600;}
   .skill-showcase{position:relative;}
@@ -246,9 +247,17 @@
   .built-pager{
     font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--text-dimmer);
     margin-bottom:20px;letter-spacing:0.04em;
+    display:flex;align-items:center;gap:12px;
   }
   .built-pager #builtPagerCurrent{color:var(--copper-bright);font-weight:600;}
-  .built-showcase{position:relative;}
+  .built-showcase{position:relative;touch-action:pan-y;}
+  .pager-arrow{
+    width:28px;height:28px;border-radius:50%;border:1px solid var(--line);
+    background:var(--bg-alt);color:var(--text-dim);font-size:1.05rem;line-height:1;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:all .2s;
+  }
+  .pager-arrow:hover{border-color:var(--copper);color:var(--copper-bright);}
   .built-tab{
     font-family:'IBM Plex Mono',monospace;font-size:0.86rem;color:var(--text-dim);
     border:1px solid var(--line);background:var(--bg-alt);
@@ -703,7 +712,11 @@
       <button class="skill-tab" data-target="content">Content Writer &amp; Creator</button>
       <button class="skill-tab" data-target="visual">Visual Storyteller</button>
     </div>
-    <div class="skill-pager"><span id="skillPagerCurrent">01</span> / <span id="skillPagerTotal">05</span></div>
+    <div class="skill-pager">
+      <button class="pager-arrow" id="skillPrev" aria-label="Previous skill">&#8249;</button>
+      <span id="skillPagerCurrent">01</span> / <span id="skillPagerTotal">05</span>
+      <button class="pager-arrow" id="skillNext" aria-label="Next skill">&#8250;</button>
+    </div>
 
     <div class="skill-showcase">
       <div class="skill-card active" data-tilt data-skill="fullstack">
@@ -752,7 +765,11 @@
     <div class="built-tabs card-stagger">
       <button class="built-tab active" data-target="huntboard">Huntboard</button><button class="built-tab" data-target="oz">OZ Handcrafted Footwear</button><button class="built-tab" data-target="redbelly">Redbelly Onboarding Hub</button><button class="built-tab" data-target="redbelly-v2">Redbelly Onboarding Hub (v2)</button><button class="built-tab" data-target="auditlynx">Auditlynx</button><button class="built-tab" data-target="chesspath">ChessPath</button><button class="built-tab" data-target="urpassport">UrPassport NG</button><button class="built-tab" data-target="travelsleek">TravelSleek</button>
     </div>
-    <div class="built-pager"><span id="builtPagerCurrent">01</span> / <span id="builtPagerTotal">08</span></div>
+    <div class="built-pager">
+      <button class="pager-arrow" id="builtPrev" aria-label="Previous project">&#8249;</button>
+      <span id="builtPagerCurrent">01</span> / <span id="builtPagerTotal">08</span>
+      <button class="pager-arrow" id="builtNext" aria-label="Next project">&#8250;</button>
+    </div>
     <div class="built-showcase">
       <div class="built-card active" data-tilt data-project="huntboard">
         <div class="built-img">
@@ -1337,7 +1354,7 @@
         requestAnimationFrame(onScroll);
         ticking = true;
       }
-    });
+    }, {passive: true});
   })();
 
   // Mobile hamburger menu
@@ -1528,7 +1545,7 @@
         typeState: 'typing',
         pauseStart: 0,
         lastCharTime: 0,
-        scrollSpeed: 0.22 + depth * 0.12,
+        scrollSpeed: 0.44 + depth * 0.24,
         speedPhase: Math.random() * Math.PI * 2
       };
     }
@@ -1656,6 +1673,104 @@
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
       });
+    });
+  })();
+
+  // What I Do: tab switching + arrows + swipe
+  (function(){
+    const tabs = document.querySelectorAll('.skill-tab');
+    const cards = document.querySelectorAll('.skill-card');
+    const pagerCurrent = document.getElementById('skillPagerCurrent');
+    const order = Array.from(tabs).map(t => t.dataset.target);
+    let current = 0;
+
+    function goTo(idx){
+      current = (idx + order.length) % order.length;
+      const key = order[current];
+      tabs.forEach((t, i) => t.classList.toggle('active', i === current));
+      cards.forEach(c => c.classList.toggle('active', c.dataset.skill === key));
+      if(pagerCurrent){ pagerCurrent.textContent = String(current + 1).padStart(2, '0'); }
+    }
+
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => goTo(i)));
+    const prevBtn = document.getElementById('skillPrev');
+    const nextBtn = document.getElementById('skillNext');
+    if(prevBtn){ prevBtn.addEventListener('click', () => goTo(current - 1)); }
+    if(nextBtn){ nextBtn.addEventListener('click', () => goTo(current + 1)); }
+
+    const showcase = document.querySelector('.skill-showcase');
+    if(showcase){
+      let touchStartX = 0;
+      showcase.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+      showcase.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        if(Math.abs(dx) > 50){ dx < 0 ? goTo(current + 1) : goTo(current - 1); }
+      }, {passive:true});
+    }
+  })();
+
+  // Projects that I have built: tab switching + arrows + swipe
+  (function(){
+    const tabs = document.querySelectorAll('.built-tab');
+    const cards = document.querySelectorAll('.built-card');
+    const pagerCurrent = document.getElementById('builtPagerCurrent');
+    const order = Array.from(tabs).map(t => t.dataset.target);
+    let current = 0;
+
+    function goTo(idx){
+      current = (idx + order.length) % order.length;
+      const key = order[current];
+      tabs.forEach((t, i) => t.classList.toggle('active', i === current));
+      cards.forEach(c => c.classList.toggle('active', c.dataset.project === key));
+      if(pagerCurrent){ pagerCurrent.textContent = String(current + 1).padStart(2, '0'); }
+    }
+
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => goTo(i)));
+    const prevBtn = document.getElementById('builtPrev');
+    const nextBtn = document.getElementById('builtNext');
+    if(prevBtn){ prevBtn.addEventListener('click', () => goTo(current - 1)); }
+    if(nextBtn){ nextBtn.addEventListener('click', () => goTo(current + 1)); }
+
+    const showcase = document.querySelector('.built-showcase');
+    if(showcase){
+      let touchStartX = 0;
+      showcase.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+      showcase.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].screenX - touchStartX;
+        if(Math.abs(dx) > 50){ dx < 0 ? goTo(current + 1) : goTo(current - 1); }
+      }, {passive:true});
+    }
+  })();
+
+  // Project image carousels (arrows appear automatically once 2+ images exist per project)
+  (function(){
+    document.querySelectorAll('.built-img').forEach(container => {
+      const mainEl = container.querySelector('.img-main');
+      const slides = Array.from(container.querySelectorAll('.carousel-slide'));
+      const thumbs = Array.from(container.querySelectorAll('.thumb'));
+      if(slides.length < 2){ return; }
+
+      let current = 0;
+      function show(idx){
+        current = (idx + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+      }
+
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'img-nav img-prev';
+      prevBtn.setAttribute('aria-label', 'Previous image');
+      prevBtn.innerHTML = '&#8249;';
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'img-nav img-next';
+      nextBtn.setAttribute('aria-label', 'Next image');
+      nextBtn.innerHTML = '&#8250;';
+      mainEl.appendChild(prevBtn);
+      mainEl.appendChild(nextBtn);
+
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+      thumbs.forEach((t, i) => t.addEventListener('click', () => show(i)));
     });
   })();
 </script>
