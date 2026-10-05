@@ -332,7 +332,7 @@
   }
 
   /* Hub cards linking out to dedicated sub-pages */
-  .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .hub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
 
   .modal-sub{color:var(--text-dim);font-size:0.9rem;margin-bottom:22px;}
   .modal-list{display:flex;flex-direction:column;gap:10px;}
@@ -918,7 +918,7 @@
       <button class="ring-btn ring-next" id="ringNext" aria-label="Next project">&#8250;</button>
     </div>
     <div class="wrap ring-foot">
-      <a class="btn-secondary" href="#projects-view">View every project &#8599;</a>
+      <a class="btn-secondary" href="#fullstack-view">View every project &#8599;</a>
     </div>
   </div>
 </section>
@@ -931,6 +931,16 @@
       <p>Everything I've written, built, and automated, in one place. Tap a card to open the full list.</p>
     </div>
     <div class="hub-grid card-stagger">
+      <a class="project-card hub-card" href="#fullstack-view" data-view="fullstack-view">
+        <div><div class="p-title">Full Stack Development</div><div class="p-role">Projects &amp; Client Sites</div></div>
+        <ul><li>Every project I've built, from client websites to full products, with live links and repos</li></ul>
+        <div class="card-link">View all projects ↗</div>
+      </a>
+      <a class="project-card hub-card" href="#automation-view" data-view="automation-view">
+        <div><div class="p-title">AI Automation</div><div class="p-role">Workflows &amp; Case Study</div></div>
+        <ul><li>A case study on an AI pipeline that scores, summarizes, and routes real estate leads automatically</li></ul>
+        <div class="card-link">View the case study ↗</div>
+      </a>
       <a class="project-card hub-card" href="#writing-view" data-view="writing-view">
         <div><div class="p-title">Content Writing</div><div class="p-role">Threads &amp; Articles</div></div>
         <ul><li>Threads, articles, and educational breakdowns written for VIZO Exchange, Ozak AI, XORA Finance, and more</li></ul>
@@ -940,11 +950,6 @@
         <div><div class="p-title">Research &amp; Docs</div><div class="p-role">PDFs &amp; Reports</div></div>
         <ul><li>Sourced research and documentation I've built, from on-chain proof pieces to recovery playbooks</li></ul>
         <div class="card-link">View all docs ↗</div>
-      </a>
-      <a class="project-card hub-card" href="#projects-view" data-view="projects-view">
-        <div><div class="p-title">Full Stack Development &amp; AI Automation</div><div class="p-role">Projects &amp; Case Studies</div></div>
-        <ul><li>Every project I've built, plus a case study on an AI pipeline that scores, summarizes, and routes real estate leads automatically</li></ul>
-        <div class="card-link">View all projects ↗</div>
       </a>
     </div>
   </div>
@@ -1128,20 +1133,14 @@
   </div>
 </div>
 
-<div class="page-view" id="projects-view">
+<div class="page-view" id="automation-view">
   <div class="wrap">
     <a href="#" class="back-link" data-back="true">&larr; Back to portfolio</a>
     <div class="section-head">
       <span class="eyebrow">My Work</span>
-      <h2>Full Stack Development &amp; AI Automation</h2>
-      <p>Everything I've built: client sites, products, and automation pipelines that keep running without me.</p>
-    </div>
-
-    <div class="pv-sub">
-      <h3>AI Automation</h3>
+      <h2>AI Automation</h2>
       <p>Pipelines that capture, decide, and notify on their own.</p>
     </div>
-
     <article class="cs">
       <div class="cs-head">
         <div class="b-tag">Real Estate Operations &amp; Sales Automation</div>
@@ -1215,15 +1214,20 @@
         <span class="tech-badge">n8n</span><span class="tech-badge">Ollama (local LLM)</span><span class="tech-badge">Google Sheets API</span><span class="tech-badge">Google Forms</span><span class="tech-badge">Telegram Bot API</span><span class="tech-badge">Gmail SMTP</span><span class="tech-badge">Nodemailer</span><span class="tech-badge">Webhooks</span><span class="tech-badge">JSON expression mapping</span>
       </div>
     </article>
+  </div>
+</div>
 
-    <div class="pv-sub">
-      <h3>Full Stack Development</h3>
+<div class="page-view" id="fullstack-view">
+  <div class="wrap">
+    <a href="#" class="back-link" data-back="true">&larr; Back to portfolio</a>
+    <div class="section-head">
+      <span class="eyebrow">My Work</span>
+      <h2>Full Stack Development</h2>
       <p>Products and client sites, from first commit to live link.</p>
     </div>
     <div class="pgrid" id="projectGrid"></div>
   </div>
 </div>
-
 
 <footer>© 2026 maleekskies · full stack development · ai automation · qa · content</footer>
 

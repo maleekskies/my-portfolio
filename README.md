@@ -13,10 +13,11 @@ The site covers:
 - **About**: background, current focus, and core stats
 - **What I Do**: 4 core skill areas (Full Stack Development, AI Automation, Software Testing & QA, Content Writer), shown as a tabbed single-view, one at a time
 - **Featured projects**: 4 highlighted projects (VAULT 01, ChessHatch, Huntboard, OZ Handcrafted Footwear) on an interactive 3D ring carousel, with a link to the full list
-- **My Work**: a hub with three in-page views:
+- **My Work**: a hub with four in-page views, with Full Stack Development and AI Automation first:
+  - **Full Stack Development**: all 9 projects with screenshots, descriptions, tech stacks, live links, and repo links
+  - **AI Automation**: the Skies Realty AI lead-management case study, with a pipeline diagram
   - **Content Writing**: published threads and articles
   - **Research & Docs**: sourced research documents
-  - **Full Stack Development & AI Automation**: the Skies Realty AI lead-management case study, plus all 9 projects with screenshots, descriptions, tech stacks, live links, and repo links
 - **Tools I Use**: tech stack organized by category (frontend, backend, AI, tools & design), each with its logo
 - **What Drives Me**: 4 short values behind the work
 - **Contact**: email, X, Telegram, LinkedIn, and Discord
@@ -49,7 +50,7 @@ Each project is written once, as a hidden card inside the `projectStore` block n
 
 ## Adding screenshots to the Skies Realty case study
 
-Find the `SCREENSHOTS` comment inside the case study in `index.html`. It contains a ready-made block: add your images to the project folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
+Find the `SCREENSHOTS` comment inside the case study (the AI Automation page) in `index.html`. It contains a ready-made block: add your images to the project folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
 
 ## Files
 
