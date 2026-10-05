@@ -12,7 +12,7 @@ The site covers:
 
 - **About**: background, current focus, and core stats
 - **What I Do**: 4 core skill areas (Full Stack Development, AI Automation, Software Testing & QA, Content Writer), shown as a tabbed single-view, one at a time
-- **Featured projects**: 4 highlighted projects (VAULT 01, ChessHatch, Huntboard, OZ Handcrafted Footwear) on an interactive 3D ring carousel, with a link to the full list
+- **Featured projects**: 4 highlighted projects (VAULT 01, ChessHatch, Huntboard, OZ Handcrafted Footwear) on an interactive 3D ring carousel of compact cards; tapping a card opens a details panel with the full description, tech stack, links, and a swipeable gallery of screenshots
 - **My Work**: a hub with four in-page views, with Full Stack Development and AI Automation first:
   - **Full Stack Development**: all 9 projects with screenshots, descriptions, tech stacks, live links, and repo links
   - **AI Automation**: the Skies Realty AI lead-management case study, with a pipeline diagram
@@ -27,6 +27,7 @@ The site covers:
 - Light/dark theme toggle (preference saved locally)
 - Dynamic background: a multi-column scrolling code effect in dark mode (brass/forest palette, glow, depth layering), an interactive particle network in light mode that particles gently drift toward the cursor
 - 3D ring carousel for featured projects: drag, swipe, arrow buttons, or arrow keys to rotate; the front card tilts and catches a light glare following the mouse; clicking a side card brings it forward
+- Project details panel: a bottom sheet on mobile and a centered window on desktop, with a screenshot gallery (swipe, arrows, or arrow keys), closing with the X, the Escape key, or a tap outside
 - 3D tilt effect on skill and tool cards, following the mouse
 - Skies Realty case study with a pipeline diagram (form, n8n, scoring, local AI summary, CRM, Telegram alert)
 - Mobile header auto-hides on scroll down, reappears on scroll up
@@ -46,11 +47,15 @@ The site covers:
 
 ## Editing the projects
 
-Each project is written once, as a hidden card inside the `projectStore` block near the bottom of `index.html`. The home-page ring and the full projects list are both built from those cards, so editing a project there updates both places. The four ring projects and their order are set by the `featured` list at the top of the "Featured projects" script.
+Each project is written once, as a hidden card inside the `projectStore` block near the bottom of `index.html`. The home-page ring, the details panel, and the full projects list are all built from those cards, so editing a project there updates every place it appears. The four ring projects and their order are set by the `featured` list at the top of the "Featured projects" script.
+
+## Adding pictures to a project's gallery
+
+Screenshots live in the `images` folder. In the same script, find the `GALLERY` list: each project has lines like `['images/huntboard-inbox.jpg', 'Caption shown under the picture']`. Add a line for each new picture (the word `cover` means the project's existing card image). A project with no entry just shows its card image, with no arrows. For fast loading, keep screenshots around 800px wide and save them as JPEG.
 
 ## Adding screenshots to the Skies Realty case study
 
-Find the `SCREENSHOTS` comment inside the case study (the AI Automation page) in `index.html`. It contains a ready-made block: add your images to the project folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
+Find the `SCREENSHOTS` comment inside the case study (the AI Automation page) in `index.html`. It contains a ready-made block: add your images to the `images` folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
 
 ## Files
 
@@ -58,11 +63,12 @@ Find the `SCREENSHOTS` comment inside the case study (the AI Automation page) in
 - `cv.pdf`: linked from the CV button in the nav
 - `favicon.ico`, `favicon-32.png`, `favicon-192.png`: browser tab icon, multiple sizes
 - `preview.jpg`: the image shown when the site link is shared on social platforms or messaging apps
+- `images/`: screenshots shown in the project details panel
 - `README.md`: this file
 
 ## Deployment
 
-This is a static site, so it can be deployed anywhere that serves static files. Upload all the files above together, in the same folder, since `index.html` links to several of them by relative path and they'll break if separated.
+This is a static site, so it can be deployed anywhere that serves static files. Upload all the files above together, in the same folder (including the `images` folder), since `index.html` links to several of them by relative path and they'll break if separated.
 
 - **Netlify Drop**: drag and drop the folder at [app.netlify.com/drop](https://app.netlify.com/drop)
 - **Vercel**: create a project and upload the folder

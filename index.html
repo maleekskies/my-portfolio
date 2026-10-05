@@ -728,6 +728,114 @@
     .pcard-tilt{transition:none;}
   }
 
+
+  /* ============ COMPACT PROJECT CARDS ============ */
+  .ring-item .pcard-img{height:190px;}
+  .pgrid .pcard-img{height:170px;}
+  .pcard-body{padding:20px 22px 22px;}
+  .pcard-body .site-card-head{margin-bottom:0;}
+  .pcard-body .b-tag{margin-top:6px;}
+  .pgrid .pcard-body p{
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:12px 0 0;
+  }
+  .pcard-more{
+    margin-top:18px;width:100%;padding:12px 16px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:transparent;color:var(--text);
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.02em;
+    transition:border-color .2s,color .2s,background .2s;
+  }
+  .pgrid .pcard-more{margin-top:auto;}
+  .pgrid .pcard-body p + .pcard-more{margin-top:18px;}
+  .pcard-more:hover,.pcard-more:focus-visible{border-color:var(--copper);color:var(--copper-bright);outline:none;}
+  .ring-item.is-active{cursor:pointer;}
+  .pgrid .pcard{cursor:pointer;}
+  @media (max-width:860px){
+    .ring-item .pcard-img{height:150px;}
+    .pgrid .pcard-img{height:160px;}
+    .pcard-body{padding:18px 18px 20px;}
+  }
+
+  /* ============ DETAILS PANEL ============ */
+  html.dlg-open{overflow:hidden;}
+  .dlg-backdrop{
+    position:fixed;inset:0;z-index:400;display:flex;align-items:flex-end;justify-content:center;
+    background:rgba(8,6,4,.74);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .25s ease,visibility 0s linear .25s;
+  }
+  .dlg-backdrop.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease;}
+  .dlg{
+    position:relative;display:flex;flex-direction:column;width:100%;max-height:92vh;overflow:hidden;
+    background:var(--bg-alt);border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;
+    transform:translateY(28px);transition:transform .32s cubic-bezier(.2,.8,.2,1);
+  }
+  .dlg-backdrop.open .dlg{transform:none;}
+  .dlg-scroll{overflow-y:auto;flex:1;overscroll-behavior:contain;}
+  .dlg-close{
+    position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(var(--bg-rgb),.82);color:var(--text);
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s,color .2s;
+  }
+  .dlg-close:hover,.dlg-close:focus-visible{border-color:var(--copper);color:var(--copper-bright);outline:none;}
+
+  .dlg-media{position:relative;background:#0d0a07;}
+  .dlg-stage{
+    height:min(54vh,520px);display:flex;align-items:center;justify-content:center;
+    touch-action:pan-y;-webkit-user-select:none;user-select:none;padding:14px 0 0;
+  }
+  .dlg-stage img{
+    max-width:100%;max-height:100%;object-fit:contain;display:block;opacity:0;
+    transition:opacity .25s ease;-webkit-user-drag:none;
+  }
+  .dlg-stage img.ready{opacity:1;}
+  .dlg-nav{
+    position:absolute;top:calc(min(54vh,520px) / 2 - 18px);z-index:3;width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.18);background:rgba(13,10,7,.62);color:#f3ece0;
+    font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s,color .2s;
+  }
+  .dlg-nav:hover,.dlg-nav:focus-visible{border-color:var(--copper);color:var(--copper-bright);outline:none;}
+  .dlg-nav[hidden]{display:none;}
+  .dlg-prev{left:10px;}
+  .dlg-next{right:10px;}
+  .dlg-cap{
+    padding:12px 18px 4px;text-align:center;min-height:2.2em;
+    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#b9ad9a;
+  }
+  .dlg-dots{display:flex;gap:8px;justify-content:center;padding:6px 0 16px;}
+  .dlg-dots[hidden]{display:none;}
+  .dlg-dots button{
+    width:8px;height:8px;border-radius:50%;padding:0;border:0;cursor:pointer;
+    background:rgba(243,236,224,.28);transition:background .2s,transform .2s;
+  }
+  .dlg-dots button.on{background:var(--copper-bright);transform:scale(1.25);}
+
+  .dlg-info{padding:26px 24px calc(30px + env(safe-area-inset-bottom,0px));}
+  .dlg-info h3{font-family:'Space Grotesk',sans-serif;font-size:1.55rem;color:var(--text);}
+  .dlg-info .b-tag{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--cyan-bright);text-transform:uppercase;letter-spacing:0.06em;margin-top:6px;}
+  .dlg-info p{color:var(--text-dim);font-size:0.98rem;margin:16px 0 18px;}
+  .dlg-info .built-tags{margin-bottom:22px;}
+  .dlg-info .built-links{margin:0;}
+
+  @media (min-width:861px){
+    .dlg-backdrop{align-items:center;padding:32px;}
+    .dlg{
+      max-width:1060px;height:min(86vh,700px);max-height:none;border:1px solid var(--line);border-radius:22px;
+      transform:translateY(18px) scale(.985);
+    }
+    .dlg-scroll{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);overflow:hidden;}
+    .dlg-media{display:flex;flex-direction:column;min-height:0;}
+    .dlg-stage{height:auto;flex:1;min-height:0;}
+    .dlg-nav{top:calc(50% - 40px);}
+    .dlg-info{overflow-y:auto;padding:44px 40px 40px;}
+    .dlg-info h3{font-size:1.9rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .dlg-backdrop,.dlg,.dlg-stage img{transition:none;}
+  }
+
 </style>
 </head>
 <body>
@@ -1159,11 +1267,11 @@
       </ol>
       <div class="flow-legend"><span class="lg-code">Code decides the numbers</span><span class="lg-ai">Local AI only reads the language</span></div>
 
-      <!-- SCREENSHOTS: when you have them, drop them in here, for example:
+      <!-- SCREENSHOTS: when you have them, add the files to the images folder, then drop them in here, for example:
       <div class="cs-shots">
-        <figure class="cs-shot"><img src="skies-n8n-canvas.png" alt="n8n workflow canvas for the Skies Realty pipeline"><figcaption>The full n8n workflow</figcaption></figure>
-        <figure class="cs-shot"><img src="skies-telegram-alert.png" alt="Telegram priority alert for a new lead"><figcaption>Priority alert in Telegram</figcaption></figure>
-        <figure class="cs-shot"><img src="skies-crm-sheet.png" alt="Google Sheets CRM with the AI Summary column"><figcaption>The CRM view with AI summaries</figcaption></figure>
+        <figure class="cs-shot"><img src="images/skies-n8n-canvas.png" alt="n8n workflow canvas for the Skies Realty pipeline"><figcaption>The full n8n workflow</figcaption></figure>
+        <figure class="cs-shot"><img src="images/skies-telegram-alert.png" alt="Telegram priority alert for a new lead"><figcaption>Priority alert in Telegram</figcaption></figure>
+        <figure class="cs-shot"><img src="images/skies-crm-sheet.png" alt="Google Sheets CRM with the AI Summary column"><figcaption>The CRM view with AI summaries</figcaption></figure>
       </div>
       Blur or replace any real names, phone numbers, or emails first. -->
 
@@ -1230,6 +1338,22 @@
 </div>
 
 <footer>© 2026 maleekskies · full stack development · ai automation · qa · content</footer>
+
+<div class="dlg-backdrop" id="dlgBackdrop" aria-hidden="true">
+  <div class="dlg" role="dialog" aria-modal="true" aria-label="Project details">
+    <button type="button" class="dlg-close" id="dlgClose" aria-label="Close details">&times;</button>
+    <div class="dlg-scroll">
+      <div class="dlg-media">
+        <div class="dlg-stage" id="dlgStage"><img id="dlgImg" alt="" draggable="false"></div>
+        <button type="button" class="dlg-nav dlg-prev" id="dlgPrev" aria-label="Previous picture">&#8249;</button>
+        <button type="button" class="dlg-nav dlg-next" id="dlgNext" aria-label="Next picture">&#8250;</button>
+        <div class="dlg-cap" id="dlgCap"></div>
+        <div class="dlg-dots" id="dlgDots"></div>
+      </div>
+      <div class="dlg-info" id="dlgInfo"></div>
+    </div>
+  </div>
+</div>
 
 <div id="projectStore" hidden>
       <div class="built-card active" data-tilt data-project="huntboard">
@@ -1906,8 +2030,8 @@
     }
   })();
 
-  // Featured projects: 3D ring carousel + the full project grid.
-  // The nine project cards live once, in #projectStore. Both views are built from them.
+  // Featured projects: compact cards, 3D ring carousel, details panel with gallery.
+  // The nine project cards live once, in #projectStore. Every view is built from them.
   (function(){
     const store = document.querySelectorAll('#projectStore .built-card');
     const byKey = {};
@@ -1915,6 +2039,37 @@
     const featured = ['vault01', 'chesshatch', 'huntboard', 'oz'].filter(k => byKey[k]);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Gallery pictures per project. 'cover' means the project's existing card image.
+    // Add more pictures by adding [file, caption] lines here (files live in the images folder).
+    const GALLERY = {
+      huntboard: [
+        ['cover', 'Job detail with the match breakdown'],
+        ['images/huntboard-inbox.jpg', 'Inbox: roles scored against your CV and preferences'],
+        ['images/huntboard-kit.jpg', 'Kit overview: why it matches and gaps to address']
+      ],
+      chesshatch: [
+        ['cover', 'Landing page: choose where to start'],
+        ['images/chesshatch-lessons.jpg', 'Beginner lesson path'],
+        ['images/chesshatch-tactics.jpg', 'Intermediate tactics: 10 series, 50 lessons'],
+        ['images/chesshatch-bots.jpg', 'Nine bot levels with progression']
+      ],
+      auditlynx: [
+        ['cover', 'Module 01: Security Headers & Config Checker'],
+        ['images/auditlynx-modules.jpg', 'The five analysis modules']
+      ],
+      oz: [
+        ['cover', 'Our Craft section'],
+        ['images/oz-home.jpg', 'Home page: handcrafted for a perfect fit'],
+        ['images/oz-collection.jpg', 'Featured collection with search and filters'],
+        ['images/oz-product.jpg', 'Product page: colour, size, and WhatsApp order']
+      ],
+      vault01: [
+        ['images/vault01-mint.jpg', 'Genesis Collection mint page'],
+        ['images/vault01-previews.jpg', 'Watch previews: Onyx, Rose, Green, Steel']
+      ]
+    };
+
+    // ---------- compact card (the face only; full details open in the panel) ----------
     function makeCard(src, variant){
       const el = document.createElement('article');
       el.className = 'pcard' + (variant ? ' ' + variant : '');
@@ -1936,10 +2091,16 @@
 
       const body = document.createElement('div');
       body.className = 'pcard-body';
-      ['.site-card-head', '.b-tag', 'p', '.built-tags', '.built-links'].forEach(sel => {
+      const sels = variant === 'ring-item' ? ['.site-card-head', '.b-tag'] : ['.site-card-head', '.b-tag', 'p'];
+      sels.forEach(sel => {
         const node = src.querySelector(sel);
         if(node){ body.appendChild(node.cloneNode(true)); }
       });
+      const more = document.createElement('button');
+      more.type = 'button';
+      more.className = 'pcard-more';
+      more.innerHTML = 'View details <span aria-hidden="true">&#8599;</span>';
+      body.appendChild(more);
 
       const glare = document.createElement('span');
       glare.className = 'glare';
@@ -1954,14 +2115,137 @@
       return el;
     }
 
-    // ---- all-projects page: featured four first, then the rest ----
-    const grid = document.getElementById('projectGrid');
-    if(grid){
-      featured.concat(Object.keys(byKey).filter(k => featured.indexOf(k) === -1))
-        .forEach(k => grid.appendChild(makeCard(byKey[k], '')));
+    // ---------- details panel ----------
+    const backdrop = document.getElementById('dlgBackdrop');
+    const dlg = backdrop ? backdrop.querySelector('.dlg') : null;
+    let slides = [], sIdx = 0, opener = null, isOpen = false;
+    let dImg, dCap, dDots, dInfo, dPrev, dNext, dClose, dStage;
+
+    if(dlg){
+      dImg = document.getElementById('dlgImg');
+      dCap = document.getElementById('dlgCap');
+      dDots = document.getElementById('dlgDots');
+      dInfo = document.getElementById('dlgInfo');
+      dPrev = document.getElementById('dlgPrev');
+      dNext = document.getElementById('dlgNext');
+      dClose = document.getElementById('dlgClose');
+      dStage = document.getElementById('dlgStage');
     }
 
-    // ---- 3D ring ----
+    function showSlide(i){
+      if(!slides.length){ return; }
+      sIdx = (i + slides.length) % slides.length;
+      const s = slides[sIdx];
+      dImg.classList.remove('ready');
+      dImg.onload = () => dImg.classList.add('ready');
+      dImg.src = s.src;
+      dImg.alt = s.alt;
+      if(dImg.complete){ dImg.classList.add('ready'); }
+      dCap.textContent = s.cap;
+      dDots.querySelectorAll('button').forEach((b, j) => {
+        b.classList.toggle('on', j === sIdx);
+        if(j === sIdx){ b.setAttribute('aria-current', 'true'); } else { b.removeAttribute('aria-current'); }
+      });
+      // warm the neighbours so swiping feels instant
+      [sIdx + 1, sIdx - 1].forEach(n => {
+        const t = slides[(n + slides.length) % slides.length];
+        if(t){ const pre = new Image(); pre.src = t.src; }
+      });
+    }
+
+    function openDetails(key, from){
+      const src = byKey[key];
+      if(!src || !dlg){ return; }
+      const title = (src.querySelector('h3') || {}).textContent || 'Project';
+      const cover = src.querySelector('.carousel-slide');
+      const list = GALLERY[key] || [['cover', '']];
+      slides = list.map(pair => ({
+        src: pair[0] === 'cover' ? (cover ? cover.src : '') : pair[0],
+        cap: pair[1],
+        alt: pair[1] ? title + ': ' + pair[1] : title
+      }));
+
+      dInfo.innerHTML = '';
+      ['.site-card-head', '.b-tag', 'p', '.built-tags', '.built-links'].forEach(sel => {
+        const node = src.querySelector(sel);
+        if(node){ dInfo.appendChild(node.cloneNode(true)); }
+      });
+      dlg.setAttribute('aria-label', title + ' details');
+
+      dDots.innerHTML = '';
+      slides.forEach((s, j) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Show picture ' + (j + 1) + ' of ' + slides.length);
+        b.addEventListener('click', () => showSlide(j));
+        dDots.appendChild(b);
+      });
+      const multi = slides.length > 1;
+      dPrev.hidden = dNext.hidden = dDots.hidden = !multi;
+
+      showSlide(0);
+      opener = from || document.activeElement;
+      isOpen = true;
+      backdrop.classList.add('open');
+      backdrop.setAttribute('aria-hidden', 'false');
+      document.documentElement.classList.add('dlg-open');
+      dlg.querySelector('.dlg-scroll').scrollTop = 0;
+      dInfo.scrollTop = 0;
+      setTimeout(() => dClose.focus(), 30);
+    }
+
+    function closeDetails(){
+      if(!isOpen){ return; }
+      isOpen = false;
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('dlg-open');
+      if(opener && opener.focus){ try{ opener.focus({preventScroll: true}); }catch(e){} }
+    }
+
+    if(dlg){
+      dClose.addEventListener('click', closeDetails);
+      backdrop.addEventListener('click', (e) => { if(e.target === backdrop){ closeDetails(); } });
+      dPrev.addEventListener('click', () => showSlide(sIdx - 1));
+      dNext.addEventListener('click', () => showSlide(sIdx + 1));
+      document.addEventListener('keydown', (e) => {
+        if(!isOpen){ return; }
+        if(e.key === 'Escape'){ e.preventDefault(); closeDetails(); }
+        else if(e.key === 'ArrowLeft' && slides.length > 1){ e.preventDefault(); showSlide(sIdx - 1); }
+        else if(e.key === 'ArrowRight' && slides.length > 1){ e.preventDefault(); showSlide(sIdx + 1); }
+        else if(e.key === 'Tab'){
+          const f = [...dlg.querySelectorAll('a[href], button:not([hidden])')].filter(n => n.offsetParent !== null);
+          if(!f.length){ return; }
+          const first = f[0], last = f[f.length - 1];
+          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+      });
+      // swipe the gallery
+      let sx0 = 0, sy0 = 0, sdown = false;
+      dStage.addEventListener('pointerdown', (e) => { sdown = true; sx0 = e.clientX; sy0 = e.clientY; });
+      dStage.addEventListener('pointerup', (e) => {
+        if(!sdown){ return; }
+        sdown = false;
+        const dx = e.clientX - sx0, dy = e.clientY - sy0;
+        if(slides.length > 1 && Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4){
+          showSlide(sIdx + (dx < 0 ? 1 : -1));
+        }
+      });
+      dStage.addEventListener('pointercancel', () => { sdown = false; });
+    }
+
+    // ---------- all-projects page ----------
+    const grid = document.getElementById('projectGrid');
+    if(grid){
+      featured.concat(Object.keys(byKey).filter(k => featured.indexOf(k) === -1)).forEach(k => {
+        const card = makeCard(byKey[k], '');
+        card.addEventListener('click', () => openDetails(k, card.querySelector('.pcard-more')));
+        grid.appendChild(card);
+      });
+    }
+
+    // ---------- 3D ring ----------
     const stage = document.getElementById('ringStage');
     const track = document.getElementById('ringTrack');
     if(!stage || !track || !featured.length){ return; }
@@ -2034,7 +2318,7 @@
       const sw = stage.clientWidth;
       if(!sw || (!force && sw === lastW)){ return; }
       lastW = sw;
-      W = Math.min(560, sw - 56);
+      W = Math.min(520, sw - 56);
       sx = W * 0.74;
       zs = W * 0.4;
       items.forEach(el => {
@@ -2129,15 +2413,19 @@
     stage.addEventListener('pointercancel', release);
     stage.addEventListener('pointerleave', (e) => { if(e.pointerType === 'mouse' && !down){ clearTilt(); } });
 
-    // a drag should never count as a click on a link
+    // a drag should never count as a click
     stage.addEventListener('click', (e) => {
       if(justDragged){ e.preventDefault(); e.stopPropagation(); }
     }, true);
 
-    // clicking a side card brings it to the front instead of following its links
+    // front card opens its details; a side card comes to the front first
     items.forEach((el, i) => {
       el.addEventListener('click', (e) => {
-        if(justDragged || i === activeIdx()){ return; }
+        if(justDragged){ return; }
+        if(i === activeIdx()){
+          openDetails(el.dataset.key, el.querySelector('.pcard-more'));
+          return;
+        }
         e.preventDefault();
         go(Math.round(target) + norm(i - Math.round(target)));
       });
