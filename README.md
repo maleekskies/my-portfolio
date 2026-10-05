@@ -1,6 +1,6 @@
 # maleekskies: Portfolio
 
-Personal portfolio site for **maleekskies**, a full stack developer, product manager, and content writer working across Web3, AI, and practical software.
+Personal portfolio site for **maleekskies**, a full stack developer building AI automation, with software testing & QA and content writing experience across Web3, AI, and practical software.
 
 **Live site:** [maleekskies.vercel.app](https://maleekskies.vercel.app)
 
@@ -11,13 +11,12 @@ This is a static HTML portfolio, no build step, no framework, no dependencies. A
 The site covers:
 
 - **About**: background, current focus, and core stats
-- **What I Do**: 5 core skill areas (full stack development, software testing, AI evaluation, content writing, visual storytelling), shown as a tabbed single-view, one skill at a time
-- **Projects that I have built**: 9 featured projects, tabbed single-view with screenshots, descriptions, tech stacks, live links, and repo links
-- **My Work**: a hub with four in-page views:
+- **What I Do**: 4 core skill areas (Full Stack Development, AI Automation, Software Testing & QA, Content Writer), shown as a tabbed single-view, one at a time
+- **Featured projects**: 4 highlighted projects (VAULT 01, ChessHatch, Huntboard, OZ Handcrafted Footwear) on an interactive 3D ring carousel, with a link to the full list
+- **My Work**: a hub with three in-page views:
   - **Content Writing**: published threads and articles
-  - **AI Video Content**: produced video work
   - **Research & Docs**: sourced research documents
-  - **Ambassador Work**: content collaborations with VIZO Exchange, Ozak AI, and MegPrimePay
+  - **Full Stack Development & AI Automation**: the Skies Realty AI lead-management case study, plus all 9 projects with screenshots, descriptions, tech stacks, live links, and repo links
 - **Tools I Use**: tech stack organized by category (frontend, backend, AI, tools & design), each with its logo
 - **What Drives Me**: 4 short values behind the work
 - **Contact**: email, X, Telegram, LinkedIn, and Discord
@@ -26,22 +25,31 @@ The site covers:
 
 - Light/dark theme toggle (preference saved locally)
 - Dynamic background: a multi-column scrolling code effect in dark mode (brass/forest palette, glow, depth layering), an interactive particle network in light mode that particles gently drift toward the cursor
-- 3D tilt effect on project and tool cards, following the mouse
-- Project image carousels (arrows and thumbnail strip), ready for multiple screenshots per project
+- 3D ring carousel for featured projects: drag, swipe, arrow buttons, or arrow keys to rotate; the front card tilts and catches a light glare following the mouse; clicking a side card brings it forward
+- 3D tilt effect on skill and tool cards, following the mouse
+- Skies Realty case study with a pipeline diagram (form, n8n, scoring, local AI summary, CRM, Telegram alert)
 - Mobile header auto-hides on scroll down, reappears on scroll up
-- In-page navigation between sections without full page reloads
+- In-page navigation between sections and views without full page reloads
 - CV download link, in the header on desktop and in the mobile menu on smaller screens
 - Custom favicon and social link preview image
 - Fully responsive, including a dedicated mobile menu
-- Scroll-triggered animations, respecting the "reduce motion" accessibility setting for larger entrance effects
+- Scroll-triggered animations; the 3D motion and orbit animation respect the "reduce motion" accessibility setting
 
 ## Tech Stack
 
 - HTML5, CSS3, vanilla JavaScript
-- Canvas API for the particle network background
+- CSS 3D transforms for the project carousel, Canvas API for the particle network background
 - Google Fonts (Space Grotesk, IBM Plex Mono, Inter)
 - Tool icons loaded from devicon and Simple Icons via CDN, with graceful fallback if any icon fails to load
 - No build tools, no package manager required
+
+## Editing the projects
+
+Each project is written once, as a hidden card inside the `projectStore` block near the bottom of `index.html`. The home-page ring and the full projects list are both built from those cards, so editing a project there updates both places. The four ring projects and their order are set by the `featured` list at the top of the "Featured projects" script.
+
+## Adding screenshots to the Skies Realty case study
+
+Find the `SCREENSHOTS` comment inside the case study in `index.html`. It contains a ready-made block: add your images to the project folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
 
 ## Files
 
