@@ -15,10 +15,10 @@ The site covers:
 - **Featured projects**: 4 highlighted projects (VAULT 01, ChessHatch, Huntboard, OZ Handcrafted Footwear) on an interactive 3D ring carousel of compact cards; tapping a card opens a details panel with the full description, tech stack, links, and a swipeable gallery of screenshots
 - **My Work**: a hub with four in-page views, with Full Stack Development and AI Automation first:
   - **Full Stack Development**: all 9 projects with screenshots, descriptions, tech stacks, live links, and repo links
-  - **AI Automation**: the Skies Realty AI lead-management case study, with a pipeline diagram
+  - **AI Automation**: two case studies with pipeline diagrams: the MK customer support and lead follow-up system, and the Skies Realty AI lead-management pipeline
   - **Content Writing**: published threads and articles
   - **Research & Docs**: sourced research documents
-- **Tools I Use**: tech stack organized by category (frontend, backend, AI, tools & design), each with its logo
+- **Tools I Use**: tech stack organized by category (frontend, AI automation, backend, AI & integrations, tools & design), each with its logo
 - **What Drives Me**: 4 short values behind the work
 - **Contact**: email, X, Telegram, LinkedIn, and Discord
 
@@ -29,7 +29,7 @@ The site covers:
 - 3D ring carousel for featured projects: drag, swipe, arrow buttons, or arrow keys to rotate; the front card tilts and catches a light glare following the mouse; clicking a side card brings it forward
 - Project details panel: a bottom sheet on mobile and a centered window on desktop, with a screenshot gallery (swipe, arrows, or arrow keys), closing with the X, the Escape key, or a tap outside
 - 3D tilt effect on skill and tool cards, following the mouse
-- Skies Realty case study with a pipeline diagram (form, n8n, scoring, local AI summary, CRM, Telegram alert)
+- Two AI automation case studies, each with a pipeline diagram: MK (form, sheet, validation, local AI reply, Gmail and Telegram, follow-up) and Skies Realty (form, n8n, scoring, local AI summary, CRM, Telegram alert)
 - Mobile header auto-hides on scroll down, reappears on scroll up
 - In-page navigation between sections and views without full page reloads
 - CV download link, in the header on desktop and in the mobile menu on smaller screens
@@ -53,9 +53,9 @@ Each project is written once, as a hidden card inside the `projectStore` block n
 
 Screenshots live in the `images` folder. In the same script, find the `GALLERY` list: each project has lines like `['images/huntboard-inbox.jpg', 'Caption shown under the picture']`. Add a line for each new picture (the word `cover` means the project's existing card image). A project with no entry just shows its card image, with no arrows. For fast loading, keep screenshots around 800px wide and save them as JPEG.
 
-## Adding screenshots to the Skies Realty case study
+## Adding screenshots to the automation case studies
 
-Find the `SCREENSHOTS` comment inside the case study (the AI Automation page) in `index.html`. It contains a ready-made block: add your images to the `images` folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
+Find the `SCREENSHOTS` comments inside the two case studies (the AI Automation page) in `index.html`. Each contains a ready-made block: add your images to the `images` folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
 
 ## Files
 

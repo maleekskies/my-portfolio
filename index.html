@@ -836,6 +836,26 @@
     .dlg-backdrop,.dlg,.dlg-stage img{transition:none;}
   }
 
+
+  /* ============ ROUND 5: second case study, 7-step flow, tools grid ============ */
+  .cs + .cs{margin-top:44px;}
+  @media (min-width:861px){
+    .flow.flow-7{grid-template-columns:repeat(7,1fr);gap:14px;}
+    .flow.flow-7 li{padding:14px 8px;font-size:0.78rem;}
+    .flow.flow-7 li + li::before{left:-14px;width:14px;}
+    .flow.flow-7 li + li::after{left:-6px;}
+    .tools-grid .tool-category:last-child:nth-child(odd){grid-column:1 / -1;}
+  }
+  @media (min-width:861px) and (max-width:1100px){
+    .flow.flow-7{grid-template-columns:repeat(4,1fr);row-gap:26px;}
+    .flow.flow-7 li:nth-child(4)::before,.flow.flow-7 li:nth-child(4)::after{display:block;}
+    .flow.flow-7 li:nth-child(5)::before,.flow.flow-7 li:nth-child(5)::after{display:none;}
+  }
+
+
+  /* keep the header tagline on one line, and hide it before it can wrap */
+  .logo{white-space:nowrap;}
+  @media (max-width:1180px){ .logo span{display:none;} }
 </style>
 </head>
 <body>
@@ -890,7 +910,7 @@
     <div class="badge hero-slide d1"><span class="dot"></span> Open to Development, Automation &amp; Content Roles</div>
     <div class="roles hero-slide d2">Full Stack Development · AI Automation · Software Testing &amp; QA · Content Writer</div>
     <h1 class="hero-wipe d3">Ideas become products. Products become <em>stories</em>.</h1>
-    <p class="lede hero-slide d4">I'm <strong style="color:var(--text)">maleekskies</strong>, a full stack developer who builds AI automation, backed by a software testing and QA background and a content writer's eye for clarity. If a project needs more than one of these at once, that's usually when I'm most useful.</p>
+    <p class="lede hero-slide d4">I'm <strong style="color:var(--text)">maleekskies</strong>, a full stack developer who builds AI automation, with a software testing and QA background and a habit of explaining things clearly. If a project needs more than one of these at once, that's usually when I'm most useful.</p>
     <div class="hero-ctas hero-slide d5">
       <a href="#contact" class="btn-primary">Work with me</a>
       <a href="#writing" class="btn-secondary">See my work</a>
@@ -922,8 +942,8 @@
     <div class="about-grid card-stagger">
       <div>
         <p>I've shipped 10+ web applications and PWAs for clients, built AI automation that runs without anyone watching it, and reached Gold Level as a software tester.</p>
-        <p>What ties it together is a curious mind that enjoys solving problems and keeps learning, often turning into solutions I didn't plan to build. I use AI to move fast, but never as a shortcut past the parts of the work that actually need care.</p>
-        <p>Different roles, different clients, same instinct underneath: understand a problem well enough to fix it.</p>
+        <p>I like solving problems and I keep learning as I go, which sometimes leads me to build things I hadn't planned. I use AI to move faster, but I still do the careful parts of the work myself.</p>
+        <p>Across different roles and clients, the approach is the same: understand the problem first, then fix it.</p>
         <div class="tag-row">
           <span class="learning-tag">Full Stack Development</span>
           <span class="learning-tag">AI Automation</span>
@@ -970,7 +990,7 @@
     <div class="section-head head-reveal">
       <span class="eyebrow">What I Do</span>
       <h2>What's actually in the toolbox.</h2>
-      <p>From shipping the product to automating the busywork, testing it, and writing the story that sells it.</p>
+      <p>From building the product to automating the repetitive parts around it, testing it, and writing about it.</p>
     </div>
 
     <div class="skill-tabs card-stagger">
@@ -989,22 +1009,22 @@
       <div class="skill-card active" data-tilt data-skill="fullstack">
         <div class="skill-idx-big">01</div>
         <h3>Full Stack Development</h3>
-        <div class="desc">End-to-end web development, from databases and backend logic to responsive frontend interfaces, building fast with AI-assisted tools to prototype, test, and ship working products without waiting on a full traditional dev cycle.</div>
+        <div class="desc">Web development from the database and backend to the interface, using AI-assisted tools to prototype, test, and ship working products quickly.</div>
       </div>
       <div class="skill-card" data-tilt data-skill="aiautomation">
         <div class="skill-idx-big">02</div>
         <h3>AI Automation</h3>
-        <div class="desc">Workflow automation that connects forms, CRMs, messaging, and AI into pipelines that run on their own: capturing leads, scoring them, summarizing what people actually asked for, and alerting the right person instantly. Where privacy and cost matter, I run local models so client data stays in-house and there are no per-token fees.</div>
+        <div class="desc">Workflows that connect forms, spreadsheets, messaging, and AI so routine steps run on their own: capturing leads, scoring them, summarizing what people wrote, replying, and alerting the right person. Where privacy and cost matter, I run local models, so customer data never goes to a third-party AI service and there are no per-token fees.</div>
       </div>
       <div class="skill-card" data-tilt data-skill="testing">
         <div class="skill-idx-big">03</div>
         <h3>Software Testing &amp; QA</h3>
-        <div class="desc">Manual and exploratory testing, bug identification, usability review, and detailed, actionable reports that catch what breaks before users do. Gold Level tester on testIO.</div>
+        <div class="desc">Manual and exploratory testing, usability review, and clear bug reports that catch problems before users do. Gold Level tester on testIO.</div>
       </div>
       <div class="skill-card" data-tilt data-skill="content">
         <div class="skill-idx-big">04</div>
         <h3>Content Writer</h3>
-        <div class="desc">End-to-end content creation, from research and ideation to polished writing and publishing: threads, articles, and research documents that explain complex ideas clearly.</div>
+        <div class="desc">Threads, articles, and research documents that explain complex ideas clearly, from research through to publishing.</div>
       </div>
     </div>
   </div>
@@ -1015,7 +1035,7 @@
     <div class="section-head head-reveal">
       <span class="eyebrow">Highlights</span>
       <h2>Featured projects.</h2>
-      <p>A handpicked selection from a larger body of work, where design, development, and problem solving meet.</p>
+      <p>A selection from a larger body of work. There's more behind these.</p>
     </div>
   </div>
   <div class="ring-section">
@@ -1035,7 +1055,7 @@
   <div class="wrap">
     <div class="section-head head-reveal">
       <span class="eyebrow">My Work</span>
-      <h2>Read it. Learn from it. Explore it.</h2>
+      <h2>Projects, automations, writing, and research.</h2>
       <p>Everything I've written, built, and automated, in one place. Tap a card to open the full list.</p>
     </div>
     <div class="hub-grid card-stagger">
@@ -1045,9 +1065,9 @@
         <div class="card-link">View all projects ↗</div>
       </a>
       <a class="project-card hub-card" href="#automation-view" data-view="automation-view">
-        <div><div class="p-title">AI Automation</div><div class="p-role">Workflows &amp; Case Study</div></div>
-        <ul><li>A case study on an AI pipeline that scores, summarizes, and routes real estate leads automatically</li></ul>
-        <div class="card-link">View the case study ↗</div>
+        <div><div class="p-title">AI Automation</div><div class="p-role">Workflows &amp; Case Studies</div></div>
+        <ul><li>Two automation case studies: a customer support and follow-up system, and a lead pipeline for real estate</li></ul>
+        <div class="card-link">View the case studies ↗</div>
       </a>
       <a class="project-card hub-card" href="#writing-view" data-view="writing-view">
         <div><div class="p-title">Content Writing</div><div class="p-role">Threads &amp; Articles</div></div>
@@ -1076,6 +1096,13 @@
         <p>Building responsive and interactive user interfaces.</p>
         <div class="tool-pills">
           <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>HTML5</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>CSS3</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>JavaScript</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>TypeScript</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>React</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Next.js</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Vite</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="tool-category" data-tilt>
+        <h3>AI Automation</h3>
+        <p>Connecting forms, spreadsheets, messaging, and AI into workflows that run on their own.</p>
+        <div class="tool-pills">
+          <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>n8n</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/ollama.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Ollama</span> <span class="tool-pill">Webhooks</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googlesheets.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Google Sheets API</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/googleforms.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Google Forms</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/telegram.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Telegram Bot API</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/gmail.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Gmail SMTP</span> <span class="tool-pill">Nodemailer</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/vercel.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Vercel Cron</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/zapier.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Zapier</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/make.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Make</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/airtable.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Airtable</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/slack.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Slack API</span> <span class="tool-pill">REST APIs</span> <span class="tool-pill"><span class="tool-icon-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/docker.svg" alt="" loading="lazy" onerror="this.closest('.tool-icon-wrap').style.display='none'"></span>Docker</span> <span class="tool-pill">Cron Jobs</span>
         </div>
       </div>
       <div class="tool-category" data-tilt>
@@ -1113,12 +1140,12 @@
       <div class="drives-card">
         <div class="d-num">01</div>
         <h3>Builder's Instinct</h3>
-        <p>I'd rather ship something small than perfect something that never leaves the draft.</p>
+        <p>I'd rather ship something small than keep polishing something that never goes out.</p>
       </div>
       <div class="drives-card">
         <div class="d-num">02</div>
         <h3>Clear Communicator</h3>
-        <p>A complex idea that nobody understands hasn't actually helped anyone yet.</p>
+        <p>An idea nobody can follow hasn't helped anyone yet.</p>
       </div>
       <div class="drives-card">
         <div class="d-num">03</div>
@@ -1128,7 +1155,7 @@
       <div class="drives-card">
         <div class="d-num">04</div>
         <h3>Practical Problem Solver</h3>
-        <p>The right fix is the one that actually works for the person using it, not the most impressive one.</p>
+        <p>The right fix is the one that works for the person using it, not the most impressive one.</p>
       </div>
     </div>
   </div>
@@ -1247,14 +1274,81 @@
     <div class="section-head">
       <span class="eyebrow">My Work</span>
       <h2>AI Automation</h2>
-      <p>Pipelines that capture, decide, and notify on their own.</p>
+      <p>Automations that keep running without me.</p>
     </div>
+    <article class="cs cs-mk">
+      <div class="cs-head">
+        <div class="b-tag">AI Automation · Customer Support · Lead Management</div>
+        <h3>MK: Automated Customer Support &amp; Lead Follow-Up System</h3>
+        <p class="cs-summary">A complete support and follow-up workflow built in n8n. When a customer submits an inquiry, the system checks it, writes a short reply with a locally hosted AI model, emails it through Gmail, alerts the business on Telegram, and follows up automatically if the customer doesn't respond.</p>
+      </div>
+
+      <ol class="flow flow-7" aria-label="Workflow overview">
+        <li class="n-io"><b>Google Form</b><span>Inquiry submitted</span></li>
+        <li class="n-io"><b>Google Sheets</b><span>Lead saved</span></li>
+        <li class="n-code"><b>n8n</b><span>Validate and structure</span></li>
+        <li class="n-ai"><b>Ollama</b><span>Drafts the reply</span></li>
+        <li class="n-io"><b>Gmail + Telegram</b><span>Reply sent, team alerted</span></li>
+        <li class="n-code"><b>Wait and check</b><span>Did they reply?</span></li>
+        <li class="n-io"><b>Follow-up</b><span>Email and sheet update</span></li>
+      </ol>
+      <div class="flow-legend"><span class="lg-code">Workflow logic</span><span class="lg-ai">Local AI</span></div>
+
+      <!-- SCREENSHOTS: when you have them, add the files to the images folder and drop them in here, for example:
+      <div class="cs-shots">
+        <figure class="cs-shot"><img src="images/mk-n8n-workflow.png" alt="n8n workflow canvas for the MK support and follow-up system"><figcaption>The full n8n workflow</figcaption></figure>
+        <figure class="cs-shot"><img src="images/mk-telegram-alert.png" alt="Telegram notification for a new lead"><figcaption>Instant lead alert in Telegram</figcaption></figure>
+      </div>
+      Blur or replace any real names, phone numbers, or emails first. -->
+
+      <div class="cs-cols">
+        <div>
+          <h4>The problem</h4>
+          <p>Handling new inquiries by hand means checking forms, writing replies, telling the team, and remembering to follow up. Each step is small, but together they cost time, and leads get missed.</p>
+        </div>
+        <div>
+          <h4>The solution</h4>
+          <p>One workflow handles the whole path, from the form to the follow-up. n8n runs self-hosted in Docker and the AI model runs locally through Ollama, so no paid AI APIs are involved.</p>
+        </div>
+      </div>
+
+      <h4 class="cs-h">How it works</h4>
+      <ol class="cs-steps">
+        <li><b>Capture.</b> A customer submits a Google Form with their name, email, phone number, business, service needed, budget, and project description. The response lands in Google Sheets, which acts as the lead database and starts the workflow.</li>
+        <li><b>Validate.</b> n8n checks that the required details are there, especially the email address, and cleans the lead into consistent fields.</li>
+        <li><b>Reply.</b> A locally hosted Ollama model reads the inquiry and writes a short, professional response that sticks to what the customer actually said. Gmail sends it.</li>
+        <li><b>Alert.</b> At the same moment, Telegram notifies the business with the lead's details. Both paths rejoin before the follow-up logic starts.</li>
+        <li><b>Wait and check.</b> The workflow waits a set period, then checks Gmail for a reply from the customer.</li>
+        <li><b>Follow up.</b> If there's no reply, Gmail sends a follow-up and the lead's record in Google Sheets is updated with the follow-up status.</li>
+      </ol>
+
+      <h4 class="cs-h">What it handles</h4>
+      <div class="cs-feats">
+        <div class="cs-feat"><b>One connected workflow</b><p>Google Forms, Google Sheets, Gmail, Telegram, and Ollama work together as a single process, from first inquiry to follow-up.</p></div>
+        <div class="cs-feat"><b>Local AI</b><p>The reply is written by a model running locally through Ollama, with n8n self-hosted in Docker and no paid AI APIs.</p></div>
+        <div class="cs-feat"><b>Follow-ups that need no reminders</b><p>The workflow checks whether the customer replied and only follows up if they haven't, then updates the lead's status.</p></div>
+      </div>
+
+      <h4 class="cs-h">Business value</h4>
+      <ul class="cs-impact">
+        <li>New leads are captured immediately, and customers get a fast reply.</li>
+        <li>The team is notified the moment an inquiry arrives.</li>
+        <li>Unanswered leads are followed up automatically.</li>
+        <li>Lead status stays organized in the CRM.</li>
+        <li>Inquiries are far less likely to be forgotten.</li>
+      </ul>
+
+      <h4 class="cs-h">Built with</h4>
+      <div class="tech-stack">
+        <span class="tech-badge">n8n</span><span class="tech-badge">Ollama</span><span class="tech-badge">Google Forms</span><span class="tech-badge">Google Sheets</span><span class="tech-badge">Gmail</span><span class="tech-badge">Telegram Bot API</span><span class="tech-badge">Docker</span><span class="tech-badge">Local AI</span>
+      </div>
+    </article>
+
     <article class="cs">
       <div class="cs-head">
         <div class="b-tag">Real Estate Operations &amp; Sales Automation</div>
         <h3>Skies Realty: Automated AI Lead Management &amp; CRM Pipeline</h3>
-        <p class="cs-tagline">From inquiry to priority alert, before the lead goes cold.</p>
-        <p class="cs-summary">Every property inquiry is captured, scored, summarized, logged to a CRM, and pushed to the sales team on Telegram within moments of submission. Deterministic code handles the scoring and budget logic, while a self-hosted Ollama model reads the free-text, so no client data leaves the server and there are no per-token API costs.</p>
+        <p class="cs-summary">When a property inquiry comes in, the system scores it, summarizes the buyer's notes with a locally hosted AI model, logs it to a CRM sheet, and alerts the sales team on Telegram within moments. Scoring and budget logic run in plain code, and no customer data is sent to a third-party AI service.</p>
       </div>
 
       <ol class="flow" aria-label="Pipeline overview">
@@ -1283,8 +1377,8 @@
         </div>
         <div>
           <h4>The solution</h4>
-          <p>An event-driven pipeline in n8n takes an inquiry from submission to a scored, summarized, logged, and announced lead with nobody in the loop.</p>
-          <p>The core decision is a hybrid architecture: deterministic code decides everything numerical, and a local LLM handles only language. Because Ollama runs on infrastructure the business controls, personal data stays in-house and there are no per-token fees.</p>
+          <p>An n8n workflow takes each inquiry from form submission to a scored, logged lead and a Telegram alert, with nobody in the loop.</p>
+          <p>Code decides everything numerical, and a local LLM only reads and summarizes the text. Because the model runs locally, customer data is never sent to a third-party AI service, and there are no per-token fees.</p>
         </div>
       </div>
 
@@ -1302,19 +1396,19 @@
       <h4 class="cs-h">Engineering highlights</h4>
       <div class="cs-feats">
         <div class="cs-feat"><b>Hybrid by design</b><p>Scoring and budget logic live in strict code nodes, so the same lead always gets the same score. The LLM never touches a number.</p></div>
-        <div class="cs-feat"><b>Privacy by architecture</b><p>Local inference means no customer PII is exposed to a third-party AI vendor.</p></div>
+        <div class="cs-feat"><b>Local AI inference</b><p>The model runs locally, so customer details are never sent to a third-party AI vendor.</p></div>
         <div class="cs-feat"><b>No per-token costs</b><p>Self-hosted summarization keeps the AI bill flat as lead volume grows.</p></div>
         <div class="cs-feat"><b>Schema-exact mapping</b><p>Dynamic JSON mapping matches all 11 CRM headers, so every row lands clean.</p></div>
         <div class="cs-feat"><b>Batching-safe execution</b><p>Fallback array-referencing logic prevents mismatched data when a run handles multiple items.</p></div>
-        <div class="cs-feat"><b>Built to be scanned</b><p>A one-sentence summary and a priority alert let a rep understand a lead at a glance.</p></div>
+        <div class="cs-feat"><b>Quick to read</b><p>A one-sentence summary and a priority alert let a rep understand a lead at a glance.</p></div>
       </div>
 
       <h4 class="cs-h">Impact</h4>
       <ul class="cs-impact">
-        <li><b>Faster response.</b> An automatic trigger replaces manual checking, so a lead's first alert no longer depends on someone being at a desk.</li>
-        <li><b>Cleaner data.</b> Every lead lands in the CRM in one structure with a score attached.</li>
-        <li><b>Quicker reading.</b> One sentence replaces a paragraph of raw notes.</li>
-        <li><b>Lower cost, tighter privacy.</b> No per-token AI fees, and client data stays on infrastructure the business controls.</li>
+        <li>A lead's first alert no longer depends on someone being at a desk.</li>
+        <li>Every lead lands in the CRM in the same structure, with a score attached.</li>
+        <li>Reps read one sentence instead of a paragraph of raw notes.</li>
+        <li>No per-token AI fees, and customer data is never sent to a third-party AI service.</li>
       </ul>
 
       <h4 class="cs-h">Built with</h4>
