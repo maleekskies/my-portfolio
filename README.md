@@ -20,7 +20,7 @@ The site covers:
   - **Research & Docs**: sourced research documents
 - **Tools I Use**: tech stack organized by category (frontend, AI automation, backend, AI & integrations, tools & design), each with its logo
 - **What Drives Me**: 4 short values behind the work
-- **Contact**: email, X, Telegram, LinkedIn, and Discord
+- **Contact**: an "Email me" button with a copy-email button and a CV link, plus email, X, Telegram, and LinkedIn in a terminal-style card
 
 ## Features
 
@@ -55,7 +55,7 @@ Screenshots live in the `images` folder. In the same script, find the `GALLERY` 
 
 ## Adding screenshots to the automation case studies
 
-Find the `SCREENSHOTS` comments inside the two case studies (the AI Automation page) in `index.html`. Each contains a ready-made block: add your images to the `images` folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
+Find the `SCREENSHOTS` comments inside the two case studies (the AI Automation page) in `index.html`. The MK case study already has its n8n workflow picture (`images/mk-n8n-workflow.png`). Each comment contains a ready-made block for any further pictures: add your images to the `images` folder, uncomment the block, and point each `src` at your file. Blur or replace any real names, phone numbers, or emails first.
 
 ## Files
 
@@ -86,4 +86,3 @@ Open `index.html` directly in any browser. No server required.
 - X: [@maleekskies](https://x.com/maleekskies)
 - Telegram: [@maleekskies](https://t.me/maleekskies)
 - LinkedIn: [maleekskies](https://www.linkedin.com/in/maleekskies/)
-- Discord: @maleekskies (copy the handle from the site, Discord doesn't support a direct profile link by username alone)
